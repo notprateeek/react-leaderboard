@@ -8,7 +8,7 @@ const makeSelectValue = () =>
     homepageDomain,
     substate => {
       substate.value;
-      console.log(substate);
+      console.log(substate.value);
     },
   );
 
