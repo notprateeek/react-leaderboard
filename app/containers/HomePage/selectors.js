@@ -1,15 +1,25 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const homepageDomain = state => state.leaderoard || initialState;
+const homepageDomain = state => state.leaderboard || initialState;
 
-const makeSelectValue = () =>
+function compare(a, b) {
+  if (a.points < b.points) {
+    return 1;
+  }
+  if (a.points > b.points) {
+    return -1;
+  }
+  return 0;
+}
+
+const makeSelectData = () =>
   createSelector(
     homepageDomain,
     substate => {
-      substate.value;
-      console.log(substate.value);
+      const sorted = substate.data.sort(compare);
+      return sorted;
     },
   );
 
-export { makeSelectValue };
+export { makeSelectData };

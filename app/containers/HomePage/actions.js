@@ -1,11 +1,12 @@
-import { DISPLAY, ADD } from './constants';
-
-// export const show = display => ({
-//   type: DISPLAY,
-//   display,
-// });
+import { ADD, UPDATE } from './constants';
 
 export const addLeader = value => ({
   type: ADD,
   value,
+});
+
+export const updatePoints = (operation, id) => ({
+  type: UPDATE,
+  operation,
+  id,
 });
