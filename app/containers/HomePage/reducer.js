@@ -22,6 +22,8 @@ const homepageReducer = (state = initialState, action) =>
         }
 
         draft.data = leaders;
+
+        console.log(index);
         break;
 
       default:

@@ -12,7 +12,19 @@ import { makeSelectData } from './selectors';
 import { createStructuredSelector } from 'reselect';
 
 const useStyles = makeStyles({
-  item: {},
+  item: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: 400,
+    border: '1px solid #000',
+    padding: '1em 2em',
+  },
+  rest: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
 });
 
 const Leader = props => {
@@ -23,7 +35,7 @@ const Leader = props => {
   return (
     <div className={classes.item}>
       <div>{props.item.name}</div>
-      <div>
+      <div className={classes.rest}>
         <div>{props.item.points}</div>
         <IconButton
           onClick={() => props.dispatch(updatePoints('add', props.item.id))}
