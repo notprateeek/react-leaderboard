@@ -17,8 +17,8 @@ const makeSelectData = () =>
   createSelector(
     homepageDomain,
     substate => {
-      const sorted = substate.data.sort(compare);
-      return sorted;
+      const sorted = substate.data;
+      return sorted.slice().sort(compare);
     },
   );
 
